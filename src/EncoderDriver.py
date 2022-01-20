@@ -14,7 +14,7 @@ class EncoderDriver:
         pins and turning the motor off for safety. 
         @param en_pin (There will be several of these)
         '''
-        self.timer = pyb.Timer(timer, prescaler = 256, period = 65535)
+        self.timer = pyb.Timer(timer, prescaler = 0, period = 65535)
         ch1 = self.timer.channel(1, pyb.Timer.ENC_AB, pin = in1pin)
         ch1 = self.timer.channel(2, pyb.Timer.ENC_AB, pin = in2pin)
         
@@ -38,7 +38,7 @@ class EncoderDriver:
         '''!
  
         '''
-        return self.current_position
+        return self.current_position * 3.1415926535 / 8192
 
         
     def zero(self):
@@ -55,5 +55,6 @@ if __name__ == "__main__":
     while True:
         encoder1.update()
         if (utime.ticks_ms() > (time + 500)):
-            print("\nencoder:", encoder1.timer.counter())
+            print("\ntimer counter:", encoder1.timer.counter())
+            print("\nencoder driver", encoder1.read())
             time += 500

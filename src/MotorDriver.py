@@ -71,13 +71,21 @@ class MotorDriver:
 if __name__ == "__main__":
     
     motor1 = MotorDriver(pyb.Pin.board.PA10, pyb.Pin.board.PB4, pyb.Pin.board.PB5, 3)
+    motor2 = MotorDriver(pyb.Pin.board.PC1, pyb.Pin.board.PA0, pyb.Pin.board.PA1, 5)
     
     motor1.enable()
     motor1.set_duty_cycle(50)
+    motor2.enable()
+    motor2.set_duty_cycle(50)
     utime.sleep(3)
     motor1.set_duty_cycle(-50)
+    motor2.set_duty_cycle(-50)
     utime.sleep(3)
     motor1.set_duty_cycle(-150)
+    motor2.set_duty_cycle(-150)
     utime.sleep(3)
     motor1.set_duty_cycle(0)
     motor1.disable()
+    motor2.set_duty_cycle(0)
+    motor2.disable()
+    

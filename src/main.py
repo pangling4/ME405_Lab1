@@ -11,50 +11,36 @@ seconds, then go back to 0 and repeat the process indefinitely.
 
 import pyb
 import utime
+import EncoderDriver
+import MotorDriver
 
-pinB4 = pyb.Pin (pyb.Pin.board.PB4, pyb.Pin.OUT_PP)
-pinB5 = pyb.Pin (pyb.Pin.board.PB5, pyb.Pin.OUT_PP)
-pinA10 = pyb.Pin (pyb.Pin.board.PA10, pyb.Pin.OUT_PP)
+if __name__ == "__main__":
+    encoder1 = EncoderDriver.EncoderDriver(pyb.Pin(pyb.Pin.cpu.C6), pyb.Pin(pyb.Pin.cpu.C7), 8)
+    motor1 = MotorDriver.MotorDriver(pyb.Pin.board.PC1, pyb.Pin.board.PA0, pyb.Pin.board.PA1, 5)
+    time = utime.ticks_ms()
+    
+    motor1.enable()
+    encoder1.update()
+    motor1.set_duty_cycle(-20)
+    
+    while True:
+        encoder1.update()
+        if encoder1.read() >= 6.2831:
+            motor1.disable()
+            break
+    
 
-tim3 = pyb.Timer (3, freq=20000)
-ch1 = tim3.channel (1, pyb.Timer.PWM, pin=pinB4)
-ch2 = tim3.channel (2, pyb.Timer.PWM, pin=pinB5)
+#ENCODER DRIVER
+#while utime.ticks_ms() < (time + 10000):
+#     while True:
+#         encoder1.update()
+#         if (utime.ticks_ms() > (time + 500)):
+#             print("\ntimer counter:", encoder1.timer.counter())
+#             print("\nencoder driver", encoder1.read())
+#             time += 500
+        
+        
 
-pinA10.high()
-ch1.pulse_width_percent(100)
-ch2.pulse_width_percent(0)
-utime.sleep(3)
-ch1.pulse_width_percent(50)
-utime.sleep(3)
-ch1.pulse_width_percent(0)
-ch2.pulse_width_percent(100)
-utime.sleep(3)
-pinA10.low()
-utime.sleep(3)
-pinA10.high()
-utime.sleep(3)
-ch1.pulse_width_percent(0)
-ch2.pulse_width_percent(0)
-
-
-
-# def led_setup ():
-#     """!
-#     Sets up pin, timer, and channel objects to control LED
-#     """
-#     pinA0 = pyb.Pin (pyb.Pin.board.PA0, pyb.Pin.OUT_PP)
-#     tim2 = pyb.Timer (2, freq=20000)
-#     # channel object needs to be global in order to be accessed...
-#     # ...by led_brightness() function later
-#     global ch1
-#     ch1 = tim2.channel (1, pyb.Timer.PWM_INVERTED, pin=pinA0)
-# 
-# def led_brightness (brightness):
-#     """!
-#     Sets LED brightness on channel defined in led_setup()
-#     @param brightness A percentage for the PWM control
-#     """
-#     ch1.pulse_width_percent (brightness)
 # 
 # # Test Code
 # if __name__ == "__main__":
