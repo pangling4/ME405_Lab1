@@ -38,9 +38,9 @@ class EncoderDriver:
         '''!
  
         '''
-        return self.current_position * 3.1415926535 / 8192
+        return self.current_position * 3.1415926535 / 8192 #256*4*8
 
-        
+
     def zero(self):
         self.current_position = 0
         self.delta = 0
