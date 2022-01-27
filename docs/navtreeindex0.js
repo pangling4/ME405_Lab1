@@ -18,9 +18,10 @@ var NAVTREEINDEX0 =
 "functions_func.html":[1,2,1],
 "index.html":[],
 "index.html":[0],
-"index.html#Encoder":[0,2],
-"index.html#Motor":[0,1],
 "index.html#intro_sec":[0,0],
+"index.html#ss_Encoder":[0,2],
+"index.html#ss_Motor":[0,1],
+"index.html#ss_main":[0,3],
 "main_8py.html":[2,0,0,0],
 "pages.html":[]
 };
