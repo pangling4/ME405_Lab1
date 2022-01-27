@@ -6,8 +6,8 @@ LED’s brightness slowly increase from 0 to maximum over 5
 seconds, then go back to 0 and repeat the process indefinitely.
 
 @author Jonathan Cederquist, Tim Jain, Philip Pang
-@date   01-Jan-2022
-"""
+@date   13-Jan-2022
+"""s
 
 import pyb
 import utime

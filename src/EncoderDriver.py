@@ -12,11 +12,13 @@ class EncoderDriver:
         '''! 
         Creates an encoder driver by initializing GPIO
         pins and turning the motor off for safety. 
-        @param en_pin (There will be several of these)
+        @param in1pin
+        @param in2pin
+        @param timers
         '''
         self.timer = pyb.Timer(timer, prescaler = 0, period = 65535)
         ch1 = self.timer.channel(1, pyb.Timer.ENC_AB, pin = in1pin)
-        ch1 = self.timer.channel(2, pyb.Timer.ENC_AB, pin = in2pin)
+        ch2 = self.timer.channel(2, pyb.Timer.ENC_AB, pin = in2pin)
         
 
     def update(self):
