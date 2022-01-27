@@ -1,6 +1,6 @@
 var annotated_dup =
 [
-    [ "EncoderDriver", null, [
+    [ "EncoderDriver", "namespace_encoder_driver.html", [
       [ "EncoderDriver", "class_encoder_driver_1_1_encoder_driver.html", "class_encoder_driver_1_1_encoder_driver" ]
     ] ],
     [ "MotorDriver", null, [

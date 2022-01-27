@@ -31,6 +31,9 @@ var NAVTREE =
       [ "Encoder Reading", "index.html#ss_Encoder", null ],
       [ "Main Script", "index.html#ss_main", null ]
     ] ],
+    [ "Namespaces", "namespaces.html", [
+      [ "Namespace List", "namespaces.html", "namespaces_dup" ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
@@ -47,7 +50,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"annotated.html"
+"_motor_driver_8py.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

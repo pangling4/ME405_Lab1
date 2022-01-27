@@ -68,17 +68,17 @@ $(document).ready(function(){initNavTree('class_motor_driver_1_1_motor_driver.ht
 </div><!--header-->
 <div class="contents">
 
-<p>This class implements a motor driver for an ME405 kit.  
+<p>This class allows instances of motors to be made and controlled individually.  
  <a href="class_motor_driver_1_1_motor_driver.html#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a203b25ca164a85e9ed6e0943cfe481e9"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_driver_1_1_motor_driver.html#a203b25ca164a85e9ed6e0943cfe481e9">__init__</a> (self, en_pin, in1pin, in2pin, timer)</td></tr>
-<tr class="memdesc:a203b25ca164a85e9ed6e0943cfe481e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a motor driver by initializing GPIO pins and turning the motor off for safety.  <a href="class_motor_driver_1_1_motor_driver.html#a203b25ca164a85e9ed6e0943cfe481e9">More...</a><br /></td></tr>
+<tr class="memdesc:a203b25ca164a85e9ed6e0943cfe481e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Instantiates motor driver by initializing GPIO pins and turning the motor off for safety.  <a href="class_motor_driver_1_1_motor_driver.html#a203b25ca164a85e9ed6e0943cfe481e9">More...</a><br /></td></tr>
 <tr class="separator:a203b25ca164a85e9ed6e0943cfe481e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a414db9c247cbb92bcc8aefb4118bc066"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_driver_1_1_motor_driver.html#a414db9c247cbb92bcc8aefb4118bc066">set_duty_cycle</a> (self, level)</td></tr>
-<tr class="memdesc:a414db9c247cbb92bcc8aefb4118bc066"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method sets the duty cycle to be sent to the motor to the given level.  <a href="class_motor_driver_1_1_motor_driver.html#a414db9c247cbb92bcc8aefb4118bc066">More...</a><br /></td></tr>
-<tr class="separator:a414db9c247cbb92bcc8aefb4118bc066"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9cd08b4a7a49baff35d47ea683b89a09"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_motor_driver_1_1_motor_driver.html#a9cd08b4a7a49baff35d47ea683b89a09">set_duty_cycle</a> (self, duty)</td></tr>
+<tr class="memdesc:a9cd08b4a7a49baff35d47ea683b89a09"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method sets the duty cycle to be sent to the motor to the given level.  <a href="class_motor_driver_1_1_motor_driver.html#a9cd08b4a7a49baff35d47ea683b89a09">More...</a><br /></td></tr>
+<tr class="separator:a9cd08b4a7a49baff35d47ea683b89a09"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a296e591519f90c295ca618e961baa1a7"><td class="memItemLeft" align="right" valign="top"><a id="a296e591519f90c295ca618e961baa1a7" name="a296e591519f90c295ca618e961baa1a7"></a>
 def&#160;</td><td class="memItemRight" valign="bottom"><b>enable</b> (self)</td></tr>
 <tr class="memdesc:a296e591519f90c295ca618e961baa1a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method enables the motor by setting the sleep pin to high. <br /></td></tr>
@@ -101,7 +101,7 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a3f158a3cde78da9ead16554063d710d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p >This class implements a motor driver for an ME405 kit. </p>
+<div class="textblock"><p >This class allows instances of motors to be made and controlled individually. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a203b25ca164a85e9ed6e0943cfe481e9" name="a203b25ca164a85e9ed6e0943cfe481e9"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a203b25ca164a85e9ed6e0943cfe481e9">&#9670;&nbsp;</a></span>__init__()</h2>
@@ -147,13 +147,14 @@ Public Attributes</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Creates a motor driver by initializing GPIO pins and turning the motor off for safety. </p>
+<p>Instantiates motor driver by initializing GPIO pins and turning the motor off for safety. </p>
+<p >A timer object is also made. This will be used to send PWM'd power to the motors</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">en_pin</td><td>Pin object for motor sleep </td></tr>
+    <tr><td class="paramname">en_pin</td><td>Pin object for enabling motor (AKA sleep pin): high() for enable, low() for disable </td></tr>
     <tr><td class="paramname">in1pin</td><td>Pin object for motor input </td></tr>
     <tr><td class="paramname">in2pin</td><td>Pin object for motor input </td></tr>
-    <tr><td class="paramname">timer</td><td>An int designating which timer to use </td></tr>
+    <tr><td class="paramname">timer</td><td>An integer designating which timer to use for the pin objects specified </td></tr>
   </table>
   </dd>
 </dl>
@@ -161,8 +162,8 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a414db9c247cbb92bcc8aefb4118bc066" name="a414db9c247cbb92bcc8aefb4118bc066"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a414db9c247cbb92bcc8aefb4118bc066">&#9670;&nbsp;</a></span>set_duty_cycle()</h2>
+<a id="a9cd08b4a7a49baff35d47ea683b89a09" name="a9cd08b4a7a49baff35d47ea683b89a09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cd08b4a7a49baff35d47ea683b89a09">&#9670;&nbsp;</a></span>set_duty_cycle()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -177,7 +178,7 @@ Public Attributes</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">&#160;</td>
-          <td class="paramname"><em>level</em>&#160;</td>
+          <td class="paramname"><em>duty</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -190,7 +191,7 @@ Public Attributes</h2></td></tr>
 <p>This method sets the duty cycle to be sent to the motor to the given level. </p>
 <p >Positive values cause torque in one direction, negative values in the opposite direction. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">level</td><td>A signed integer holding the duty cycle of the voltage sent to the motor </td></tr>
+    <tr><td class="paramname">duty</td><td>A signed integer representing desired duty cycle for the power sent to the motor </td></tr>
   </table>
   </dd>
 </dl>
@@ -198,7 +199,7 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
-<li>src/MotorDriver.py</li>
+<li>src/<a class="el" href="_motor_driver_8py.html">MotorDriver.py</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

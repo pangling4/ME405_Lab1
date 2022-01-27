@@ -63,7 +63,6 @@ $(document).ready(function(){initNavTree('class_encoder_driver_1_1_encoder_drive
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
-<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="class_encoder_driver_1_1_encoder_driver-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">EncoderDriver.EncoderDriver Class Reference</div></div>
 </div><!--header-->
@@ -75,16 +74,17 @@ $(document).ready(function(){initNavTree('class_encoder_driver_1_1_encoder_drive
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:aa100dd5b48ac3acc3da5679edfd95239"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_encoder_driver_1_1_encoder_driver.html#aa100dd5b48ac3acc3da5679edfd95239">__init__</a> (self, in1pin, in2pin, timer)</td></tr>
-<tr class="memdesc:aa100dd5b48ac3acc3da5679edfd95239"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an encoder driver by initializing GPIO pins and turning the motor off for safety.  <a href="class_encoder_driver_1_1_encoder_driver.html#aa100dd5b48ac3acc3da5679edfd95239">More...</a><br /></td></tr>
+<tr class="memdesc:aa100dd5b48ac3acc3da5679edfd95239"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an encoder driver object.  <a href="class_encoder_driver_1_1_encoder_driver.html#aa100dd5b48ac3acc3da5679edfd95239">More...</a><br /></td></tr>
 <tr class="separator:aa100dd5b48ac3acc3da5679edfd95239"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a801d099176eaeb5ae628fef95f978680"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_encoder_driver_1_1_encoder_driver.html#a801d099176eaeb5ae628fef95f978680">update</a> (self)</td></tr>
+<tr class="memdesc:a801d099176eaeb5ae628fef95f978680"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the position of the encoder.  <a href="class_encoder_driver_1_1_encoder_driver.html#a801d099176eaeb5ae628fef95f978680">More...</a><br /></td></tr>
 <tr class="separator:a801d099176eaeb5ae628fef95f978680"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a41b8d2f907ac1fcd24fd14daca37e143"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_encoder_driver_1_1_encoder_driver.html#a41b8d2f907ac1fcd24fd14daca37e143">read</a> (self)</td></tr>
-<tr class="memdesc:a41b8d2f907ac1fcd24fd14daca37e143"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns position of encoder.  <a href="class_encoder_driver_1_1_encoder_driver.html#a41b8d2f907ac1fcd24fd14daca37e143">More...</a><br /></td></tr>
+<tr class="memdesc:a41b8d2f907ac1fcd24fd14daca37e143"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns current position of encoder.  <a href="class_encoder_driver_1_1_encoder_driver.html#a41b8d2f907ac1fcd24fd14daca37e143">More...</a><br /></td></tr>
 <tr class="separator:a41b8d2f907ac1fcd24fd14daca37e143"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb58e945601c251f0f92369b0296457d"><td class="memItemLeft" align="right" valign="top"><a id="adb58e945601c251f0f92369b0296457d" name="adb58e945601c251f0f92369b0296457d"></a>
 def&#160;</td><td class="memItemRight" valign="bottom"><b>zero</b> (self)</td></tr>
-<tr class="memdesc:adb58e945601c251f0f92369b0296457d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method zeros out the encoder. <br /></td></tr>
+<tr class="memdesc:adb58e945601c251f0f92369b0296457d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zeros the encoder position. <br /></td></tr>
 <tr class="separator:adb58e945601c251f0f92369b0296457d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -92,21 +92,18 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:aae3abe3487dc24d46599315f22fdea1f"><td class="memItemLeft" align="right" valign="top"><a id="aae3abe3487dc24d46599315f22fdea1f" name="aae3abe3487dc24d46599315f22fdea1f"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>timer</b></td></tr>
 <tr class="separator:aae3abe3487dc24d46599315f22fdea1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a60a87a2342a68b354f7dd83f7fe08b2b"><td class="memItemLeft" align="right" valign="top"><a id="a60a87a2342a68b354f7dd83f7fe08b2b" name="a60a87a2342a68b354f7dd83f7fe08b2b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>delta</b></td></tr>
-<tr class="separator:a60a87a2342a68b354f7dd83f7fe08b2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a267fe049b6d765c5b84712559c2ed7ba"><td class="memItemLeft" align="right" valign="top"><a id="a267fe049b6d765c5b84712559c2ed7ba" name="a267fe049b6d765c5b84712559c2ed7ba"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ch1</b></td></tr>
+<tr class="separator:a267fe049b6d765c5b84712559c2ed7ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab64c9a7af0eec20d60ed2cea72bc4c59"><td class="memItemLeft" align="right" valign="top"><a id="ab64c9a7af0eec20d60ed2cea72bc4c59" name="ab64c9a7af0eec20d60ed2cea72bc4c59"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>ch2</b></td></tr>
+<tr class="separator:ab64c9a7af0eec20d60ed2cea72bc4c59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8dc60df3194ada84ed347ad0eee2f6be"><td class="memItemLeft" align="right" valign="top"><a id="a8dc60df3194ada84ed347ad0eee2f6be" name="a8dc60df3194ada84ed347ad0eee2f6be"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>current_position</b></td></tr>
 <tr class="separator:a8dc60df3194ada84ed347ad0eee2f6be"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
-Static Public Attributes</h2></td></tr>
-<tr class="memitem:aaf9e101dda096250faea28623a189de3"><td class="memItemLeft" align="right" valign="top"><a id="aaf9e101dda096250faea28623a189de3" name="aaf9e101dda096250faea28623a189de3"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>current_position</b> = 0</td></tr>
-<tr class="separator:aaf9e101dda096250faea28623a189de3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7274d5633ecbdf3a81b6f86d6f2a072a"><td class="memItemLeft" align="right" valign="top"><a id="a7274d5633ecbdf3a81b6f86d6f2a072a" name="a7274d5633ecbdf3a81b6f86d6f2a072a"></a>
-int&#160;</td><td class="memItemRight" valign="bottom"><b>delta</b> = 0</td></tr>
-<tr class="separator:a7274d5633ecbdf3a81b6f86d6f2a072a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a60a87a2342a68b354f7dd83f7fe08b2b"><td class="memItemLeft" align="right" valign="top"><a id="a60a87a2342a68b354f7dd83f7fe08b2b" name="a60a87a2342a68b354f7dd83f7fe08b2b"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>delta</b></td></tr>
+<tr class="separator:a60a87a2342a68b354f7dd83f7fe08b2b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p >This class implements an encoder driver for an ME405 kit. </p>
@@ -149,12 +146,12 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>delta</b> = 0</td></tr
       </table>
 </div><div class="memdoc">
 
-<p>Creates an encoder driver by initializing GPIO pins and turning the motor off for safety. </p>
-<dl class="params"><dt>Parameters</dt><dd>
+<p>Creates an encoder driver object. </p>
+<p >Creates an encoder driver by initializing timers and channels with given pins and timer number </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">in1pin</td><td></td></tr>
-    <tr><td class="paramname">in2pin</td><td></td></tr>
-    <tr><td class="paramname">timer</td><td></td></tr>
+    <tr><td class="paramname">in1pin</td><td>A pyb.Pin object corresponding to the encoder channel A </td></tr>
+    <tr><td class="paramname">in2pin</td><td>A pyb.Pin object corresponding to the encoder channel B </td></tr>
+    <tr><td class="paramname">timer</td><td>The timer number corresponding to the encoder pins </td></tr>
   </table>
   </dd>
 </dl>
@@ -178,8 +175,8 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>delta</b> = 0</td></tr
       </table>
 </div><div class="memdoc">
 
-<p>Returns position of encoder. </p>
-<p >This multiplies the current position reading (in ticks) by pi and divides it by the CPR specs of the encoder times the gear ratio in order to convert to radians </p>
+<p>Returns current position of encoder. </p>
+<p >Converts the current encoder position reading (in ticks) to radians using the encoder CPR and gear ratio </p>
 
 </div>
 </div>
@@ -198,11 +195,10 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>delta</b> = 0</td></tr
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">@brief       This updates the position of the encoder based on the
-                timer count and previous position. 
-                needs at least 2 values in each period
-   @details     if &gt;=2 values then delta can be accurately recorded
-                saved and then subtracted from last known value </pre> 
+
+<p>Updates the position of the encoder. </p>
+<p >Updates the position of the encoder using saved last value Checks for a 'valid' delta and adjusts if needed, then adds delta to previous position </p>
+
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following file:<ul>
@@ -213,7 +209,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>delta</b> = 0</td></tr
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>EncoderDriver</b></li><li class="navelem"><a class="el" href="class_encoder_driver_1_1_encoder_driver.html">EncoderDriver</a></li>
+    <li class="navelem"><a class="el" href="namespace_encoder_driver.html">EncoderDriver</a></li><li class="navelem"><a class="el" href="class_encoder_driver_1_1_encoder_driver.html">EncoderDriver</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.2 </li>
   </ul>
 </div>
