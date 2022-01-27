@@ -2,8 +2,10 @@ var NAVTREEINDEX0 =
 {
 "annotated.html":[1,0],
 "class_encoder_driver_1_1_encoder_driver.html":[1,0,0,0],
-"class_encoder_driver_1_1_encoder_driver.html#a801d099176eaeb5ae628fef95f978680":[1,0,0,0,1],
+"class_encoder_driver_1_1_encoder_driver.html#a41b8d2f907ac1fcd24fd14daca37e143":[1,0,0,0,1],
+"class_encoder_driver_1_1_encoder_driver.html#a801d099176eaeb5ae628fef95f978680":[1,0,0,0,2],
 "class_encoder_driver_1_1_encoder_driver.html#aa100dd5b48ac3acc3da5679edfd95239":[1,0,0,0,0],
+"class_encoder_driver_1_1_encoder_driver.html#adb58e945601c251f0f92369b0296457d":[1,0,0,0,3],
 "class_motor_driver_1_1_motor_driver.html":[1,0,1,0],
 "class_motor_driver_1_1_motor_driver.html#a203b25ca164a85e9ed6e0943cfe481e9":[1,0,1,0,0],
 "class_motor_driver_1_1_motor_driver.html#a296e591519f90c295ca618e961baa1a7":[1,0,1,0,2],
@@ -16,6 +18,8 @@ var NAVTREEINDEX0 =
 "functions_func.html":[1,2,1],
 "index.html":[],
 "index.html":[0],
+"index.html#Encoder":[0,2],
+"index.html#Motor":[0,1],
 "index.html#intro_sec":[0,0],
 "main_8py.html":[2,0,0,0],
 "pages.html":[]

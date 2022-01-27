@@ -14,7 +14,7 @@ class EncoderDriver:
         pins and turning the motor off for safety. 
         @param in1pin
         @param in2pin
-        @param timers
+        @param timer
         '''
         self.timer = pyb.Timer(timer, prescaler = 0, period = 65535)
         ch1 = self.timer.channel(1, pyb.Timer.ENC_AB, pin = in1pin)
@@ -24,7 +24,9 @@ class EncoderDriver:
     def update(self):
 
         
-        '''@brief       needs at least 2 values in each period
+        '''@brief       This updates the position of the encoder based on the
+                        timer count and previous position. 
+                        needs at least 2 values in each period
            @details     if >=2 values then delta can be accurately recorded
                         saved and then subtracted from last known value '''
 
@@ -38,12 +40,17 @@ class EncoderDriver:
     
     def read (self):
         '''!
- 
+        @brief Returns position of encoder
+        @details This multiplies the current position reading (in ticks) by pi and divides it by the
+        CPR specs of the encoder times the gear ratio in order to convert to radians
         '''
         return self.current_position * 3.1415926535 / 8192 #256*4*8
-
+    
 
     def zero(self):
+        '''!
+        @brief This method zeros out the encoder
+        '''
         self.current_position = 0
         self.delta = 0
         

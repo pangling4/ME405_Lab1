@@ -79,11 +79,12 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aa100dd5b48ac3acc3da5679edfd95239"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a801d099176eaeb5ae628fef95f978680"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_encoder_driver_1_1_encoder_driver.html#a801d099176eaeb5ae628fef95f978680">update</a> (self)</td></tr>
 <tr class="separator:a801d099176eaeb5ae628fef95f978680"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a41b8d2f907ac1fcd24fd14daca37e143"><td class="memItemLeft" align="right" valign="top"><a id="a41b8d2f907ac1fcd24fd14daca37e143" name="a41b8d2f907ac1fcd24fd14daca37e143"></a>
-def&#160;</td><td class="memItemRight" valign="bottom"><b>read</b> (self)</td></tr>
+<tr class="memitem:a41b8d2f907ac1fcd24fd14daca37e143"><td class="memItemLeft" align="right" valign="top">def&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_encoder_driver_1_1_encoder_driver.html#a41b8d2f907ac1fcd24fd14daca37e143">read</a> (self)</td></tr>
+<tr class="memdesc:a41b8d2f907ac1fcd24fd14daca37e143"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns position of encoder.  <a href="class_encoder_driver_1_1_encoder_driver.html#a41b8d2f907ac1fcd24fd14daca37e143">More...</a><br /></td></tr>
 <tr class="separator:a41b8d2f907ac1fcd24fd14daca37e143"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adb58e945601c251f0f92369b0296457d"><td class="memItemLeft" align="right" valign="top"><a id="adb58e945601c251f0f92369b0296457d" name="adb58e945601c251f0f92369b0296457d"></a>
 def&#160;</td><td class="memItemRight" valign="bottom"><b>zero</b> (self)</td></tr>
+<tr class="memdesc:adb58e945601c251f0f92369b0296457d"><td class="mdescLeft">&#160;</td><td class="mdescRight">This method zeros out the encoder. <br /></td></tr>
 <tr class="separator:adb58e945601c251f0f92369b0296457d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
@@ -153,7 +154,7 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>delta</b> = 0</td></tr
   <table class="params">
     <tr><td class="paramname">in1pin</td><td></td></tr>
     <tr><td class="paramname">in2pin</td><td></td></tr>
-    <tr><td class="paramname">timers</td><td></td></tr>
+    <tr><td class="paramname">timer</td><td></td></tr>
   </table>
   </dd>
 </dl>
@@ -161,6 +162,27 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>delta</b> = 0</td></tr
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a41b8d2f907ac1fcd24fd14daca37e143" name="a41b8d2f907ac1fcd24fd14daca37e143"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41b8d2f907ac1fcd24fd14daca37e143">&#9670;&nbsp;</a></span>read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">def EncoderDriver.EncoderDriver.read </td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>self</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Returns position of encoder. </p>
+<p >This multiplies the current position reading (in ticks) by pi and divides it by the CPR specs of the encoder times the gear ratio in order to convert to radians </p>
+
+</div>
+</div>
 <a id="a801d099176eaeb5ae628fef95f978680" name="a801d099176eaeb5ae628fef95f978680"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a801d099176eaeb5ae628fef95f978680">&#9670;&nbsp;</a></span>update()</h2>
 
@@ -176,7 +198,9 @@ int&#160;</td><td class="memItemRight" valign="bottom"><b>delta</b> = 0</td></tr
         </tr>
       </table>
 </div><div class="memdoc">
-<pre class="fragment">@brief       needs at least 2 values in each period
+<pre class="fragment">@brief       This updates the position of the encoder based on the
+                timer count and previous position. 
+                needs at least 2 values in each period
    @details     if &gt;=2 values then delta can be accurately recorded
                 saved and then subtracted from last known value </pre> 
 </div>
