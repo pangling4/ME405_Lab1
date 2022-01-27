@@ -70,7 +70,7 @@ Introduction</h1>
 Motor Control</h1>
 <p >The motors used for this lab exercise utilize the L6206 H-bridge motor driver. It is used to control the 2 DC motors, controls the torque and the direction of the motor. It also acts as a safeguard so that the current does not short out the motor. The block diagram for this IC is shown below. <br  />
  </p><div class="image">
-<img src="motor_control.jpg" alt=""/>
+<img src="motor_control.JPG" alt=""/>
 </div>
 <p> The motor is connected to output pins OUT1A and OUT2A. The Nucleo L476-RG controls pins ENA, INA and IN2A. When controlling a single motor, the wires must be connected to the proper CPU pin and they are connected to a single timer on two seperate channels. The ENA pin must be enabled in order to enable the motor. The signals of INA and IN2A must be opposite of each other in order for the motor to spin. To reverse directions, the signals for each pin are reversed. The pin configuration with the appropriate timer and channels are given as such. The orange and the green wires were for the motor power. </p><div class="image">
 <img src="pins_motors.jpg" alt=""/>
