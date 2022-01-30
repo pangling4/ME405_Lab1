@@ -9,7 +9,7 @@
 # driver. It is used to control the 2 DC motors, controls the torque and the direction
 #   of the motor. It also acts as a safeguard so that the current does not short out the
 #   motor. The block diagram for this IC is shown below.  
-# @image html motor_control.jpg Figure 1: H Bridge [1]
+# @image html motor_control.JPG Figure 1: H Bridge [1]
 # The motor is connected to output pins OUT1A and OUT2A. The Nucleo L476-RG controls
 # pins ENA, INA and IN2A. When controlling a single motor, the wires must be connected
 # to the proper CPU pin and they are connected to a single timer on two seperate channels.
@@ -18,7 +18,7 @@
 # directions, the signals for each pin are reversed. The pin configuration with 
 # the appropriate timer and channels are given as such. The orange and the green wires
 # were for the motor power.
-# @image html pins_motors.jpg Figure 2: Pin Diagram [1]
+# @image html pins_motors.JPG Figure 2: Pin Diagram [1]
 # The motor is driven by a MotorDriver class, which sets the velocity via
 # pulse width modulation percentage. This is also known as a duty cycle.
 # In this assignment, our main file uses the MotorDriver to spin the motor
@@ -33,7 +33,7 @@
 # from (0,0) to (0,1) indicates that the motor is rotating counterclockwise,
 # and a movement from (0,1) to (0,0) indicates that the motor is rotating 
 # clockwise. 
-# @image html enc_diag.jpg Figure 3: Encoder Timing Diagram [1]
+# @image html enc_diag.JPG Figure 3: Encoder Timing Diagram [1]
 # The EncoderDriver works by measuring the delta, or difference, between the 
 # current reading and previous reading. This process is shown thanks to a 
 # drawing from ME 305 Lecturer Charlie Refvem. It is important to incorporate
@@ -42,7 +42,7 @@
 # per minute, the encoder reading must be converted. This is done by multiplying
 # the nominal reading by the CPR value and the gear ratio of the motor since 
 # the encoder is directly attached to the motor. 
-# @image html charlie_encoder.jpg Figure 4: Charlie Refvem Encoder Delta Diagram [2]
+# @image html charlie_encoder.JPG Figure 4: Charlie Refvem Encoder Delta Diagram [2]
 # @section ss_main Main Script 
 # The main script interfaces the MotorDriver and EncoderDriver together. 
 # We have not yet implemented a task algorithm, but the motor is simply set 
