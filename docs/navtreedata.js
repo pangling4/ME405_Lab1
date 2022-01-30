@@ -29,7 +29,8 @@ var NAVTREE =
       [ "Introduction", "index.html#intro_sec", null ],
       [ "Motor Control", "index.html#ss_Motor", null ],
       [ "Encoder Reading", "index.html#ss_Encoder", null ],
-      [ "Main Script", "index.html#ss_main", null ]
+      [ "Main Script", "index.html#ss_main", null ],
+      [ "References", "index.html#ss_ref", null ]
     ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ]

@@ -70,23 +70,31 @@ Introduction</h1>
 Motor Control</h1>
 <p >The motors used for this lab exercise utilize the L6206 H-bridge motor driver. It is used to control the 2 DC motors, controls the torque and the direction of the motor. It also acts as a safeguard so that the current does not short out the motor. The block diagram for this IC is shown below. <br  />
  </p><div class="image">
-<img src="motor_control.JPG" alt=""/>
-</div>
+<img src="motor_control.jpg" alt=""/>
+<div class="caption">
+Figure 1: H Bridge [1]</div></div>
 <p> The motor is connected to output pins OUT1A and OUT2A. The Nucleo L476-RG controls pins ENA, INA and IN2A. When controlling a single motor, the wires must be connected to the proper CPU pin and they are connected to a single timer on two seperate channels. The ENA pin must be enabled in order to enable the motor. The signals of INA and IN2A must be opposite of each other in order for the motor to spin. To reverse directions, the signals for each pin are reversed. The pin configuration with the appropriate timer and channels are given as such. The orange and the green wires were for the motor power. </p><div class="image">
-<img src="pins_motors.JPG" alt=""/>
-</div>
+<img src="pins_motors.jpg" alt=""/>
+<div class="caption">
+Figure 2: Pin Diagram [1]</div></div>
 <p> The motor is driven by a MotorDriver class, which sets the velocity via pulse width modulation percentage. This is also known as a duty cycle. In this assignment, our main file uses the MotorDriver to spin the motor slowly until it has spun one full rotation, or 2 pi radians. </p>
 <h1><a class="anchor" id="ss_Encoder"></a>
 Encoder Reading</h1>
 <p >The encoders were used to track the position of the motor as it was spinning. It measures the motor's rotations in units of ticks of the encoder. These encoders are quadrature optical encoders. The STM32 has timers that can read the pulses of the encoder in order to count distance and direction of motion. Gray code is used with two channels of the encoder. A timing diagram is shown below. The state of the encoder can be represented as (A,B). The encoder moving from (0,0) to (0,1) indicates that the motor is rotating counterclockwise, and a movement from (0,1) to (0,0) indicates that the motor is rotating clockwise. </p><div class="image">
-<img src="enc_diag.JPG" alt=""/>
-</div>
+<img src="enc_diag.jpg" alt=""/>
+<div class="caption">
+Figure 3: Encoder Timing Diagram [1]</div></div>
 <p> The <a class="el" href="namespace_encoder_driver.html">EncoderDriver</a> works by measuring the delta, or difference, between the current reading and previous reading. This process is shown thanks to a drawing from ME 305 Lecturer Charlie Refvem. It is important to incorporate this technique to receive accurate readings. The encoder measures in ticks, but in order to make sense of it to measure the motors speed in revolutions per minute, the encoder reading must be converted. This is done by multiplying the nominal reading by the CPR value and the gear ratio of the motor since the encoder is directly attached to the motor. </p><div class="image">
-<img src="charlie_encoder.JPG" alt=""/>
-</div>
+<img src="charlie_encoder.jpg" alt=""/>
+<div class="caption">
+Figure 4: Charlie Refvem Encoder Delta Diagram [2]</div></div>
  <h1><a class="anchor" id="ss_main"></a>
 Main Script</h1>
 <p >The main script interfaces the MotorDriver and <a class="el" href="namespace_encoder_driver.html">EncoderDriver</a> together. We have not yet implemented a task algorithm, but the motor is simply set to a slow duty cycle and spins until it has gone one revolution, as the encoder reading reaches 2 pi radians. </p>
+<h1><a class="anchor" id="ss_ref"></a>
+References</h1>
+<p >[1] Ridgeley, John, ME 405 Lab #1 Gray Area, W22Lab1.html, January 13, 2021 <br  />
+ [2] Refvem, Charlie, ME 305 Lecture #20, February 20, 2022 </p>
 </div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
